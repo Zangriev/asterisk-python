@@ -1,3 +1,6 @@
-include CHANGELOG
-include README
-include MANIFEST.in
+include CHANGELOG UNLICENSE AUTHORS README
+recursive-include docs *
+recursive-include tests *
+recursive-exclude docs *.pyc
+recursive-exclude tests *.pyc
+prune docs/_build
