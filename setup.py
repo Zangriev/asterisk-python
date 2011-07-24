@@ -1,38 +1,40 @@
-from distutils.core import setup
+from os.path import abspath, dirname, join, normpath
+
+from setuptools import find_packages, setup
 
 from asterisk import __version__ as version
 
 
-description = []
-f = open('README')
-logo_stripped = False
-for line in f:
-    if not logo_stripped and line.strip():
-        continue
-    logo_stripped = True
-    description.append(line)
-
-
-licenses = (
+LICENSES = (
     'Python Software Foundation License',
     'GNU Library or Lesser General Public License (LGPL)',
+    'UNLICENSE',
 )
 
 
 setup(
-    name='pyst2',
-    version=version,
-    description='A Python Interface to Asterisk',
-    long_description=''.join(description),
-    author='Karl Putland',
+
+    # Basic package information:
+    name = 'asterisk-python',
+    version = version,
+    packages = find_packages(),
+
+    # Packaging options:
+    zip_safe = False,
+    include_package_data = True,
+
+    # Metadata for PyPI:
+    author = 'Karl Putland',
     author_email='kputland@users.sourceforge.net',
-    maintainer='Randall Degges',
-    maintainer_email='rdegges@gmail.com',
-    url='http://asterisk-python.readthedocs.org/en/latest/',
-    packages=['asterisk'],
-    license=', '.join(licenses),
-    platforms='Any',
-    classifiers=[
+    maintainer = 'Randall Degges',
+    maintainer_email = 'rdegges@gmail.com',
+    license = ', '.join(LICENSES),
+    url = 'http://asterisk-python.readthedocs.org/en/latest/',
+    keywords = 'telephony call phone voip asterisk pbx telephone pstn',
+    description = 'A python interface to Asterisk.',
+    long_description = open(normpath(join(dirname(abspath(__file__)),
+         'README'))).read(),
+    classifiers = [
         'Development Status :: 5 - Production/Stable',
         'Environment :: Other Environment',
         'Intended Audience :: Developers',
@@ -46,5 +48,7 @@ setup(
         'Topic :: Communications :: Internet Phone',
         'Topic :: Communications :: Telephony',
         'Topic :: Software Development :: Libraries :: Python Modules',
-    ] + ['License :: OSI Approved :: ' + l for l in licenses],
+    ] + ['License :: OSI Approved :: ' + l for l in LICENSES],
+
 )
+
