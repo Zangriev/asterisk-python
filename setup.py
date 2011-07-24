@@ -28,7 +28,7 @@ setup(
     author_email='kputland@users.sourceforge.net',
     maintainer='Randall Degges',
     maintainer_email='rdegges@gmail.com',
-    url='http://www.sourceforge.net/projects/pyst/',
+    url='http://asterisk-python.readthedocs.org/en/latest/',
     packages=['asterisk'],
     license=', '.join(licenses),
     platforms='Any',
