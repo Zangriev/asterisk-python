@@ -15,6 +15,10 @@ Docs
 To get help installing, using, and contributing to asterisk-python, visit our
 `official documentation <http://asterisk-python.readthedocs.org/en/latest/>`_.
 
+*******
+History
+*******
+
 .. note::
 	This project has been forked because it was impossible for me to contact
 	the project maintainer (after several attempts), and I'd like to bring the
