@@ -1,5 +1,3 @@
-#!/usr/bin/env python2
-# vim: set et sw=4:
 """agi
 
 This module contains functions and classes to implment AGI scripts in python.
